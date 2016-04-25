@@ -69,7 +69,12 @@ print = function(data) {
 	lifeBar = document.getElementById('life');
 
 	main.querySelectorAll('span')[0].innerHTML = 'I am 27 years old and ' +  a.diff(b, 'days') + ' days';
-	lifeBar.style.height = a.diff(b, 'days');
+
+	/* 
+	* 366 - 100
+	* diff - x
+	*/ 
+	lifeBar.style.height = (a.diff(b, 'days'))*100 / 366 + '%' ;
 
 	for (var i = 0; i < dates_total; i ++) {
 		var span = document.createElement('span');
