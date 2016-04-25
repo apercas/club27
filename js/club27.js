@@ -31,3 +31,26 @@ retrieveData = function() {
 	  console.error("json with dates not retrieved", error);
 	});
 }
+
+/*
+* loop through the dates, look for how many days the musician lived
+* (format: `"27 years, 98 days"`) and store the amount as an 'integer'
+* Then clean the fields we don't use and ask to order the dates
+*/
+parseDates = function(dates) {
+	"use asm";
+	dates_total = dates.length;
+
+	for (var i = 0; i < dates_total; i++) {
+		dates[i]['days'] = ~~(dates[i]['VALUE 2'][0].text.split(',')[1].replace( /\D+/g, ''));
+		delete dates[i]['LINK 1'];
+		delete dates[i]['LINK 2'];
+		delete dates[i]['REFERENCE NUMBERS'];
+		delete dates[i]['SORTKEY NUMBER'];
+		delete dates[i]['SORTKEY VALUE 1'];
+		delete dates[i]['SORTKEY VALUE 2'];
+		delete dates[i]['VALUE 2'];
+	}
+	orderDates(dates);
+}
+
