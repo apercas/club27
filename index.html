@@ -1,10 +1,33 @@
 <html>
 <head>
 	<title>27 Club entrance</title>
+	<style type="text/css">
+	#bar {
+		height: 365px;
+		display: block;
+		width: 40px;
+		background: green;
+		border-radius: 15px;
+		padding: 4px;
+	}
+	#life {
+		background-color: red;
+		margin: 3px;
+		width: 86%;
+		height: 0;
+		display: block;
+		border-radius: 14px;
+		-webkit-transition: height 0.5s ease;
+		transition: height 2s ease;
+	}
+	</style>
 </head>
 <body>
 	
 	<h1>Will I join the club?</h1>
+	<div id="bar">
+		<span id="life"></span>
+	</div>
 	<article id="main">
 		<span><img src="img/loading.gif"></span>
 	</article>

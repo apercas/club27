@@ -65,17 +65,20 @@ orderDates = function(dates) {
 print = function(data) {
 	var main = document.getElementById('main'),
 	a = moment(today),
-	b = moment(last_bday);
+	b = moment(last_bday),
+	lifeBar = document.getElementById('life');
 
 	main.querySelectorAll('span')[0].innerHTML = 'I am 27 years old and ' +  a.diff(b, 'days') + ' days';
+	lifeBar.style.height = a.diff(b, 'days');
+
 	for (var i = 0; i < dates_total; i ++) {
 		var span = document.createElement('span');
 		span.className = 'person';
-		span.innerHTML = "<span class='name'>" + data[i]['TEXT CONTENT'][0].text + "</span>";
+		span.innerHTML = "<br><span class='name'>" + data[i]['TEXT CONTENT'][0].text + "</span>";
 		span.innerHTML += "<span class='job'>" + data[i]['TD CONTENT'][0].text + "</span>";
 		span.innerHTML += "<span class='cause'>" + data[i]['VALUE 1'][0].text + "</span>";
 		span.innerHTML += "<span class='date'>" + data[i]['DATE'][0].text + "</span>";
-		span.innerHTML += "<span class='days'>" + data[i]['days'] + "</span><br>";
+		span.innerHTML += "<span class='days'>" + data[i]['days'] + "</span>";
 		main.appendChild(span);
 	}
 }
