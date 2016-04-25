@@ -68,4 +68,14 @@ print = function(data) {
 	b = moment(last_bday);
 
 	main.querySelectorAll('span')[0].innerHTML = 'I am 27 years old and ' +  a.diff(b, 'days') + ' days';
+	for (var i = 0; i < dates_total; i ++) {
+		var span = document.createElement('span');
+		span.className = 'person';
+		span.innerHTML = "<span class='name'>" + data[i]['TEXT CONTENT'][0].text + "</span>";
+		span.innerHTML += "<span class='job'>" + data[i]['TD CONTENT'][0].text + "</span>";
+		span.innerHTML += "<span class='cause'>" + data[i]['VALUE 1'][0].text + "</span>";
+		span.innerHTML += "<span class='date'>" + data[i]['DATE'][0].text + "</span>";
+		span.innerHTML += "<span class='days'>" + data[i]['days'] + "</span><br>";
+		main.appendChild(span);
+	}
 }
