@@ -1,8 +1,10 @@
+var dates_total = 0,
+	orig_date = new Date('1988-09-30'),
+	final_date = new Date('2016-09-30'),
+	last_bday = new Date('2015-09-30'),
+	today = new Date();
+
 var club27 = function() {
-	var dates_total = 0,
-		orig_date = new Date('1988-09-30'),
-		final_date = new Date('2016-09-30'),
-		today = new Date();
 	retrieveData();
 };
 
@@ -57,5 +59,13 @@ orderDates = function(dates) {
 	dates_ar.sort(function(a, b) {
 	    return parseFloat(a.days) - parseFloat(b.days);
 	});
-	console.log(dates_ar)
+	print(dates_ar);
+}
+
+print = function(data) {
+	var main = document.getElementById('main'),
+	a = moment(today),
+	b = moment(last_bday);
+
+	main.querySelectorAll('span')[0].innerHTML = 'I am 27 years old and ' +  a.diff(b, 'days') + ' days';
 }
