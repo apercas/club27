@@ -54,3 +54,14 @@ parseDates = function(dates) {
 	orderDates(dates);
 }
 
+/*
+* Convert to array => order array
+*/
+orderDates = function(dates) {
+	var dates_ar = new Array(dates_total);
+	dates_ar =  Object.keys(dates).map(function(k) { return dates[k] });
+	dates_ar.sort(function(a, b) {
+	    return parseFloat(a.days) - parseFloat(b.days);
+	});
+	console.log(dates_ar)
+}
