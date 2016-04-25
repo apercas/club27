@@ -73,7 +73,7 @@ print = function(data) {
 	/* 
 	* 366 - 100
 	* diff - x
-	*/ 
+	*/
 	lifeBar.style.height = (a.diff(b, 'days'))*100 / 366 + '%' ;
 
 	for (var i = 0; i < dates_total; i ++) {
