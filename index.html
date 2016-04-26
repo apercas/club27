@@ -2,14 +2,20 @@
 <head>
 	<title>27 Club entrance</title>
 	<style type="text/css">
+	@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+	body {
+		background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%);
+	}
 	#bar {
 		height: 640px;
 		display: inline-block;
 		width: 40px;
 		background: linear-gradient(to bottom, #cdeb8e 0%,#a5c956 100%);
 		border-radius: 15px;
-		padding: 4px;
-		margin: 10px;
+	    padding: 4px;
+	    margin: 0 10px;
+	    position: relative;
+	    top: 10px;
 	}
 	#life {
 		background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%);
@@ -36,11 +42,60 @@
 	.person span {
 		display: none;
 	}
+	#grave {
+		width: 380px;
+	    height: 650px;
+	    background-color: #c0c0c0;
+	    border-top-left-radius: 50%;
+	    border-top-right-radius: 50%;
+	    position: absolute;
+	    display: block;
+	    left: 25%;
+	    transform: skewX(-2deg);
+	    border: 1px solid #AFAAAA;
+	    box-shadow: 24px 4px 4px #D8D4D4;
+		font-family: 'Amatic SC', cursive;  
+		text-align: center;
+	}
+	#grave h2 {  
+	    text-transform: uppercase;
+	    font-size: 130px;
+	    text-shadow: 2px 2px 6px #D6A158;
+	    margin: 50px 0;
+	}
+	#grave span {
+		font-size: 30px;
+		display: block;
+		padding: 0px 20px;
+	    text-shadow: 1px 1px 1px #fff;
+	}
+	#grave  .gr-name {
+		font-size: 60px;
+	}
+	#grave .grass {
+		position: absolute;
+	    bottom: -10px;
+	    height: 30px;
+	    width: 130%;
+	    padding: 0;
+	    margin: 0;
+	    left: -50px;
+	    background: linear-gradient(to bottom, #006e2e 0%,#006e2e 100%);
+	}
 	</style>
 </head>
 <body>
 	
 	<h1>Will I join the club?</h1>
+	<div id="grave">
+		<h2>r.i.p.</h2>
+		<span class="gr-name">Kurt Cobain</span>
+		<span class="gr-days">27 YO and 44 days</span>
+		<span class="gr-job">Founding member, lead singer, guitarist and songwriter for Nirvana</span>
+		<span class="gr-cause">Suicide by gunshot[44]</span>
+		<span class="gr-date">April 5, 1994</span>
+		<span class="grass"></span>
+	</div>
 	<article id="main">
 		<div id="bar">
 			<div id="life"></div>
