@@ -3,7 +3,7 @@
 	<title>27 Club entrance</title>
 	<style type="text/css">
 	#bar {
-		height: 100%;
+		height: 640px;
 		display: inline-block;
 		width: 40px;
 		background: linear-gradient(to bottom, #cdeb8e 0%,#a5c956 100%);
@@ -24,16 +24,28 @@
 		display: inline;
     	position: absolute;
 	}
+	.person {
+		position: absolute;
+	    left: 17px;
+	    height: 5px;
+	    width: 34px;
+	    background: rgba(0,167,255,0.4);
+	    border-radius: 50%;
+	    box-shadow: 1px 1px 1px rgba(254,254,254,0.3);
+	}
+	.person span {
+		display: none;
+	}
 	</style>
 </head>
 <body>
 	
 	<h1>Will I join the club?</h1>
-	<div id="bar">
-		<span id="life"></span>
-	</div>
 	<article id="main">
-		<span><img src="img/loading.gif"></span>
+		<div id="bar">
+			<div id="life"></div>
+		</div>
+		<span class="me"><img src="img/loading.gif"></span>
 	</article>
 
 	<script   src="http://momentjs.com/downloads/moment.min.js"></script>
