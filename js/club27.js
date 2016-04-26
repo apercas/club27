@@ -68,7 +68,7 @@ print = function(data) {
 	b = moment(last_bday),
 	lifeBar = document.getElementById('life');
 
-	main.querySelectorAll('span')[0].innerHTML = 'I am 27 years old and ' +  a.diff(b, 'days') + ' days';
+	main.querySelectorAll('span')[0].innerHTML = 'I <a href="https://twitter.com/adrpz" target="_blank">am</a> 27 years old and ' +  a.diff(b, 'days') + ' days';
 
 	/* 
 	* 365 - 100
@@ -100,4 +100,11 @@ var displayPerson = function(idEl) {
 	target.querySelectorAll('.gr-job')[0].innerHTML = data.dataset.job;
 	target.querySelectorAll('.gr-cause')[0].innerHTML = data.dataset.cause;
 	target.querySelectorAll('.gr-date')[0].innerHTML = data.dataset.date;
+}
+var header = document.getElementsByTagName('header')[0];
+var people = header.querySelectorAll('span');
+for (var i = 0; i < people.length; i++) {
+	people[i].addEventListener('mouseenter', function(ev){
+		displayPerson(ev.target.dataset.elid);
+	});
 }
