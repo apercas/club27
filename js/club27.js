@@ -79,16 +79,25 @@ print = function(data) {
 	for (var i = 0; i < dates_total; i ++) {
 		var span = document.createElement('span');
 		span.className = 'person';
+		span.id = 'd'+ data[i]['days'];
+		span.dataset.name = data[i]['TEXT CONTENT'][0].text;
+		span.dataset.job = data[i]['TD CONTENT'][0].text;
+		span.dataset.cause = data[i]['VALUE 1'][0].text;
+		span.dataset.date = data[i]['DATE'][0].text;
+		span.dataset.days = data[i]['days'];
 		span.style.top = (data[i]['days'] * 100) / 365 + '%';
-		span.innerHTML = "<span class='name'>" + data[i]['TEXT CONTENT'][0].text + "</span>";
-		span.innerHTML += "<span class='job'>" + data[i]['TD CONTENT'][0].text + "</span>";
-		span.innerHTML += "<span class='cause'>" + data[i]['VALUE 1'][0].text + "</span>";
-		span.innerHTML += "<span class='date'>" + data[i]['DATE'][0].text + "</span>";
-		span.innerHTML += "<span class='days'>" + data[i]['days'] + "</span>";
 		span.addEventListener('mouseenter',function(ev) {
-			console.log(ev);
+			displayPerson(ev.target.id);
 		});
 		main.appendChild(span);
 	}
 }
-
+var displayPerson = function(idEl) {
+	var data = document.getElementById(idEl),
+		target = document.getElementById('grave');
+	target.querySelectorAll('.gr-name')[0].innerHTML = data.dataset.name;
+	target.querySelectorAll('.gr-days')[0].innerHTML = '27 YO ' + data.dataset.days + ' days';
+	target.querySelectorAll('.gr-job')[0].innerHTML = data.dataset.job;
+	target.querySelectorAll('.gr-cause')[0].innerHTML = data.dataset.cause;
+	target.querySelectorAll('.gr-date')[0].innerHTML = data.dataset.date;
+}
