@@ -68,7 +68,7 @@ print = function(data) {
 	b = moment(last_bday),
 	lifeBar = document.getElementById('life');
 
-	main.querySelectorAll('span')[0].innerHTML = 'I <a href="https://twitter.com/adrpz" target="_blank">am</a> 27 years old and ' +  a.diff(b, 'days') + ' days';
+	document.querySelectorAll('.me')[0].innerHTML = 'Hi I <a href="https://twitter.com/adrpz" target="_blank">am</a> 27 years old and ' +  a.diff(b, 'days') + ' days, check who I have surpassed in life and my next goals... unless &#9760;';
 
 	/* 
 	* 365 - 100
