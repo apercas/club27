@@ -68,13 +68,19 @@ print = function(data) {
 	b = moment(last_bday),
 	lifeBar = document.getElementById('life');
 
-	document.querySelectorAll('.me')[0].innerHTML = 'Hi! I <a href="https://twitter.com/adrpz" target="_blank">am</a> 27 years old and ' +  a.diff(b, 'days') + ' days, check who I have surpassed in life and my next goals... unless &#9760;';
+	if (a >= final_date) {
+		document.querySelectorAll('.me')[0].innerHTML = 'Hi! I <a href="https://twitter.com/adrpz" target="_blank">am</a> more than 27 years old... and not a rockstar. It\'s been fun, though!';
+	} else {
+		document.querySelectorAll('.me')[0].innerHTML = 'Hi! I <a href="https://twitter.com/adrpz" target="_blank">am</a> 27 years old and ' +  a.diff(b, 'days') + ' days, check who I have surpassed in life and my next goals... unless &#9760;';
+	}
 
 	/* 
 	* 365 - 100
 	* diff - x
 	*/
-	lifeBar.style.height = (a.diff(b, 'days'))*100 / 365 + '%' ;
+	var pixelDays = (a.diff(b, 'days'));
+	if (pixelDays > 365) pixelDays = 365;
+	lifeBar.style.height = pixelDays*99 / 365 + '%' ;
 
 	for (var i = 0; i < dates_total; i ++) {
 		var span = document.createElement('span');
